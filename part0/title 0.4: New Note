@@ -1,0 +1,28 @@
+title 0.4: New Note 
+
+Browser->Server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+Server-->Browser: text/html
+
+note over Browser: 
+HTTP response code: 302 redirection - 
+further action needs to be taken in order 
+to complete the request
+end note
+
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+Server-->Browser: html-code
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+Server-->Browser: main.css
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+Server-->Browser: main.js
+
+note over Browser: 
+browser starts executing js-code 
+that requests JSON data from the server 
+end note 
+
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+Server-->Browser: [{"content: "","date":"2020-08-29T08:18:55.275Z"}, ... ]
+
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/favicon.ico
+Server-->Browser: text/html
